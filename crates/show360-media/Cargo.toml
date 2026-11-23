@@ -1,0 +1,16 @@
+[package]
+name = "show360-media"
+description = "Tokens LiveKit, permissions tracks et helpers rôles média"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+[dependencies]
+show360-core = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+jsonwebtoken = { workspace = true }
+chrono = { workspace = true }
+thiserror = { workspace = true }

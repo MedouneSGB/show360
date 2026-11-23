@@ -1,0 +1,17 @@
+# Image API Show360 (Axum) — multi-stage
+FROM rust:1.100-bookworm AS builder
+WORKDIR /app
+COPY Cargo.toml Cargo.lock* ./
+COPY crates ./crates
+COPY apps ./apps
+# Workspace members hors API non requis pour le binaire, mais Cargo les résout.
+RUN cargo build --release -p show360-api
+
+FROM debian:bookworm-slim
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+COPY --from=builder /app/target/release/show360-api /usr/local/bin/show360-api
+ENV SHOW360_API_BIND=0.0.0.0:8080
+EXPOSE 8080
+ENTRYPOINT ["show360-api"]

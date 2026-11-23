@@ -1,0 +1,28 @@
+# Rust
+/target/
+**/target/
+Cargo.lock.bak
+
+# Env / secrets
+.env
+.env.*
+!.env*.example
+deploy/cloud/.env.cloud
+
+# Node / tooling parasites
+node_modules/
+dist/
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Tauri / Dioxus
+apps/web/dist/
+apps/desktop/src-tauri/gen/
+apps/desktop/src-tauri/target/
+
+# OS
+Thumbs.db

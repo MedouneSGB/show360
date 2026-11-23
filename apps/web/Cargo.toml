@@ -1,0 +1,18 @@
+[package]
+name = "show360-web"
+description = "Client web Dioxus (WASM) Show360"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+[dependencies]
+show360-core = { workspace = true }
+show360-ui = { workspace = true }
+dioxus = { workspace = true, features = ["web", "launch"] }
+serde = { workspace = true }
+
+[features]
+default = ["web"]
+web = []

@@ -1,0 +1,25 @@
+# LiveKit self-hosted — config de développement Show360
+# Clés alignées sur SHOW360_LIVEKIT_* (jamais exposées aux clients).
+
+port: 7880
+rtc:
+  tcp_port: 7881
+  port_range_start: 50000
+  port_range_end: 50100
+  # En LAN local, use_external_ip: false évite les soucis NAT.
+  use_external_ip: false
+
+redis:
+  address: redis:6379
+
+keys:
+  # Dev uniquement — remplacer en prod / cloud.
+  devkey: secret
+
+logging:
+  level: info
+
+room:
+  auto_create: true
+  empty_timeout: 300
+  max_participants: 50

@@ -1,0 +1,13 @@
+[package]
+name = "show360-ui"
+description = "Composants Dioxus partagés Show360 (web + desktop)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+[dependencies]
+show360-core = { workspace = true }
+dioxus = { workspace = true }
+serde = { workspace = true }
