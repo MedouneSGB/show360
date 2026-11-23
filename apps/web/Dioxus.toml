@@ -1,0 +1,16 @@
+[application]
+name = "show360-web"
+default_platform = "web"
+out_dir = "dist"
+asset_dir = "assets"
+
+[web.app]
+title = "Show360"
+
+[web.watcher]
+reload_html = true
+watch_path = ["src", "../../crates/show360-ui"]
+
+[web.resource]
+style = []
+script = []

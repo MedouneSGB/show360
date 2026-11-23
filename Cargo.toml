@@ -1,0 +1,44 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/show360-core",
+    "crates/show360-api",
+    "crates/show360-media",
+    "crates/show360-ui",
+    "apps/web",
+    "apps/desktop/src-tauri",
+]
+default-members = [
+    "crates/show360-core",
+    "crates/show360-api",
+    "crates/show360-media",
+    "crates/show360-ui",
+    "apps/web",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/MedouneSGB/show360"
+authors = ["Show360"]
+
+[workspace.dependencies]
+show360-core = { path = "crates/show360-core" }
+show360-media = { path = "crates/show360-media" }
+show360-ui = { path = "crates/show360-ui" }
+
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde", "clock"] }
+thiserror = "2"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "signal", "sync", "time"] }
+axum = { version = "0.8", features = ["macros"] }
+tower-http = { version = "0.6", features = ["cors", "trace"] }
+jsonwebtoken = "9"
+dioxus = { version = "0.6", default-features = false, features = ["macro", "html", "signals"] }
+anyhow = "1"
+clap = { version = "4", features = ["derive", "env"] }
